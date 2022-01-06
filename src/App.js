@@ -8,9 +8,10 @@ import Search from "./components/Search/Search";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
+  const [search, setSearch] = useState("");
   const [fetchedData, updateFetchedData] = useState([]);
   const {info, results} = fetchedData;
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
     (async function () {
@@ -25,7 +26,7 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick & Morty <span className="text-primary">WiKi</span>
       </h1>
-      <Search />
+      <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
       <div className="container">
         <div className="row">
           <div className="col-3">
