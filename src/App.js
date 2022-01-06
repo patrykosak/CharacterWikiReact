@@ -10,7 +10,7 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
   const [fetchedData, updateFetchedData] = useState([]);
-  const {info, results} = fetchedData;
+  const { info, results } = fetchedData;
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick & Morty <span className="text-primary">WiKi</span>
       </h1>
-      <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className="container">
         <div className="row">
           <div className="col-3">
@@ -34,12 +34,16 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards results={results}/>
+              <Cards results={results} />
             </div>
           </div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   );
 }
