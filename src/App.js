@@ -29,9 +29,7 @@ function App() {
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className="container">
         <div className="row">
-          <div className="col-3">
             <Filters />
-          </div>
           <div className="col-8">
             <div className="row">
               <Cards results={results} />
