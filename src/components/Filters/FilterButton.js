@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilterButton = ({ name, index, item }) => {
+const FilterButton = ({ task, setPageNumber, name, index, item }) => {
   return (
     <div>
         <style jsx>
@@ -17,12 +17,16 @@ const FilterButton = ({ name, index, item }) => {
         </style>
       <div className="form-check">
         <input
+          onClick={(e)=>{
+              setPageNumber(1);
+              task(item);
+          }}
           className="form-check-input x"
           type="radio"
           name="flexRadioDefault"
           id={`${name}-${index}`}
         />
-        <label class="btn btn-outline-primary" for={`${name}-${index}`}>
+        <label className="btn btn-outline-primary" for={`${name}-${index}`}>
           {item}
         </label>
       </div>
