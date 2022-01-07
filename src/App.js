@@ -6,8 +6,26 @@ import Filters from "./components/Filters/Filters";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
+import Episodes from './Pages/Episodes'
+import Location from './Pages/Location'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/episodes" element={<Episodes />}/>
+        <Route path="/location" element={<Location />}/>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
   const [fetchedData, updateFetchedData] = useState([]);
@@ -27,10 +45,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <h1 className="text-center ubuntu my-4">
-        Rick & Morty <span className="text-primary">WiKi</span>
-      </h1>
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className="container">
         <div className="row">
@@ -54,6 +68,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
