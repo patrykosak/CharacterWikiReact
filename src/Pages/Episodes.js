@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Cards from "../components/Cards/Cards";
+import InputGroup from "../components/Filters/Category/InputGroup";
 
 const Episodes = () => {
   const [info, setInfo] = useState([]);
@@ -24,7 +25,7 @@ const Episodes = () => {
 
   return (
     <div className="container">
-      <div className="Row">
+      <div className="row mb-4">
         <h1 className="text-center mb-4">
           Episode :{" "}
           <span className="text-primary">{name === "" ? "Unknown" : name}</span>
@@ -34,7 +35,12 @@ const Episodes = () => {
         </h5>
       </div>
       <div className="row">
-        <div className="col-3">Pick Episodes</div>
+        <div className="col-3">
+        <h4 className="text-center mb-4">
+        Pick Episode
+        </h4>
+        <InputGroup name="Episode" total={51} setID={setID} />
+        </div>
         <div className="col-8">
           <div className="row">
             <Cards results={results} />
