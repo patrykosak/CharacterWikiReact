@@ -31,13 +31,13 @@ const Location = () => {
           <h6 className="text-center">Type: {type === "" ? "Unknown" : type}  </h6>
       </div>
       <div className="row">
-          <div className="col-3 text-center">
+          <div className="col-lg-3 col-12 text-center">
           <h4 className="text-center mb-4">
         Pick Location
         </h4>
               <InputGroup name="Location" total={126} setID={setID} />
           </div>
-          <div className="col-8">
+          <div className="col-lg-8 col-12">
               <div className="row">
                   <Cards page="/location/" results={results}/>
               </div>

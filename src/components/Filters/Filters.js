@@ -5,15 +5,15 @@ import Status from "./Category/Status";
 
 const Filters = ({ setGender, setSpecies, setStatus, setPageNumber }) => {
   const clear=()=>{
-    // setPageNumber(1);
-    // setGender("");
-    // setSpecies("");
-    // setStatus("");
+    setPageNumber(1);
+    setGender("");
+    setSpecies("");
+    setStatus("");
     window.location.reload(false);
   }
   
   return (
-    <div className="col-3">
+    <div className="col-lg-3 col-12 mb-5">
       <div className="text-center fw-bold fs-4 mb-2">Filters</div>
       <div
         onClick={clear}
